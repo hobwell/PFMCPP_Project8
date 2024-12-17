@@ -112,7 +112,7 @@ int main()
      
      reserve how ever many cars, motorcycles, and trucks you'll create first
      */
-    cars.reserve(3); //reserving room for 3 Car instances
+    cars.reserve (3); //reserving room for 3 Car instances
     
     /*
      Now that we have reserved space for our UDT instances inside the vector, we can construct them in-place inside the vector.
@@ -120,7 +120,7 @@ int main()
      
      use the vector member function 'emplace_back' to construct your car/truck/motorcycle instances in-place
      */
-    cars.emplace_back("janice"); //constructing the first Car instance in-place in the cars vector
+    cars.emplace_back ("janice"); //constructing the first Car instance in-place in the cars vector
     
     /*
      construct 2 more Car instances via emplace_back.
@@ -133,12 +133,12 @@ int main()
     
     
     
-    assert(false);
+    assert (false);
     //add the cars, motorcycles and trucks to the highway using range-based for() loops: for( element : vec ) { ... }
     //be careful to not accidentally make element copies when iterating.
     
     HighwayPatrol cop;
-    cop.scanHighway(&highway);
+    cop.scanHighway (&highway);
 
     std::cout << "done" << std::endl;
 

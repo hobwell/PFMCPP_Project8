@@ -6,11 +6,11 @@
 
 struct Motorcycle : public Vehicle
 {
-    Motorcycle(const std::string& n);
+    Motorcycle (const std::string& n);
     
-    void lanesplitAndRace( int topSpeed = std::numeric_limits<int>::max() );
+    void lanesplitAndRace (int topSpeed = std::numeric_limits<int>::max());
     
     void tryToEvade() override;
 
-    void setSpeed(int s) override;
+    void setSpeed (int s) override;
 };

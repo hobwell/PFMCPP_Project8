@@ -5,14 +5,14 @@
 
 struct Vehicle
 {
-    Vehicle(const std::string& n);
+    Vehicle (const std::string& n);
     
     //Special member Functions.  See instruction 9) and note in main()
     virtual ~Vehicle() = default;
-    Vehicle(const Vehicle&) = default;
-    Vehicle& operator=(const Vehicle&) = default;
+    Vehicle (const Vehicle&) = default;
+    Vehicle& operator= (const Vehicle&) = default;
     
-    virtual void setSpeed(int s);
+    virtual void setSpeed (int s);
     virtual void tryToEvade();
     
 protected:
