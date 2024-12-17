@@ -1,11 +1,12 @@
+#include <iostream>
+
 #include "Motorcycle.h"
 
-Motorcycle::Motorcycle (const std::string& n) : Vehicle (n) 
-{
-    
-}
+Motorcycle::Motorcycle (const std::string& n, const std::string& vt) : Vehicle (n, vt) {}
 
-void Motorcycle::lanesplitAndRace (int topSpeed)
+Motorcycle::~Motorcycle () {}
+
+void Motorcycle::lanesplitAndRace (const int topSpeed)
 {
     setSpeed (topSpeed);
     std::cout << name << (topSpeed > 90 ? ": yeeehawwww" : ": zzzzzzzz") << std::endl;
@@ -17,7 +18,7 @@ void Motorcycle::tryToEvade()
     setSpeed (120);
 }
 
-void Motorcycle::setSpeed(int s)
+void Motorcycle::setSpeed (int s)
 {
     if (s < 90)
     {

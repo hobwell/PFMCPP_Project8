@@ -1,11 +1,10 @@
-#include "Car.h"
-
 #include <iostream>
 
-Car::Car (const std::string& n) : Vehicle (n) 
-{
-    
-}
+#include "Car.h"
+
+Car::Car (const std::string& n, const std::string& vt) : Vehicle (n, vt) {}
+
+Car::~Car () {}
 
 void Car::closeWindows()
 {

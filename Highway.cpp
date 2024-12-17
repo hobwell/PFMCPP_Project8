@@ -1,12 +1,12 @@
+#include <algorithm>
+
 #include "Highway.h"
 #include "Car.h"
 #include "HighwayPatrol.h"
 #include "Motorcycle.h"
 #include "SemiTruck.h"
 
-#include <cassert>
-
-void Highway::changeSpeed (int newSpeed)
+void Highway::changeSpeed (const int newSpeed)
 {
     speedLimit = newSpeed;
     for (auto* vehicle : vehicles)
@@ -15,7 +15,7 @@ void Highway::changeSpeed (int newSpeed)
     }
 }
 
-void Highway::addVehicleInternal (Vehicle* v)
+void Highway::addVehicleInternal (Vehicle* const v)
 {
     /*
     depending on the derived type, call the member function that doesn't evade the cops. 
@@ -33,13 +33,9 @@ void Highway::addVehicleInternal (Vehicle* v)
     {
         s->mergeOnto (this);
     }
-    else if (auto* h = dynamic_cast<HighwayPatrol*> (v))
-    {
-        h->scanHighway (this);
-    }
 }
 
-void Highway::removeVehicleInternal (Vehicle* v)
+void Highway::removeVehicleInternal (Vehicle* const v)
 {
     /*
     depending on the derived type, call the member function that tries to evade the cops. 
@@ -52,24 +48,21 @@ void Highway::removeVehicleInternal (Vehicle* v)
     }
     else if (auto* m = dynamic_cast<Motorcycle*> (v))
     {
-        m->tryToEvade(100);
+        m->tryToEvade();
     }
     else if (auto* s = dynamic_cast<SemiTruck*> (v))
     {
         s->pullOver();
     }
-    else if (auto* h = dynamic_cast<HighwayPatrol*> (v))
-    {
-        h->scanHighway(this);
-    }
 }
 
-void Highway::addVehicle (Vehicle* v)
+void Highway::addVehicle (Vehicle* const v)
 {
     vehicles.push_back (v);
     addVehicleInternal (v);
 }
-void Highway::removeVehicle (Vehicle* v)
+
+void Highway::removeVehicle (Vehicle* const v)
 {
     vehicles.erase (std::remove (vehicles.begin(), 
                                  vehicles.end(), 

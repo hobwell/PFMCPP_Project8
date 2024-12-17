@@ -1,17 +1,18 @@
 #pragma once
 
 #include <vector>
-#include <algorithm>
 
 struct Vehicle;
+
 struct Highway
 {
-    void changeSpeed (int newSpeed);
-    void addVehicle (Vehicle* v);
-    void removeVehicle (Vehicle* v);
+    void changeSpeed (const int newSpeed);
+    void addVehicle (Vehicle* const v);
+    void removeVehicle (Vehicle* const v);
+
 private:
-    void addVehicleInternal (Vehicle* v);
-    void removeVehicleInternal (Vehicle* v);
+    void addVehicleInternal (Vehicle* const v);
+    void removeVehicleInternal (Vehicle* const v);
     int speedLimit = 65;
     std::vector<Vehicle*> vehicles;
 
