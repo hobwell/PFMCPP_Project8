@@ -3,7 +3,7 @@
 #include "Vehicle.h"
 
 struct Highway;
-struct HighwayPatrol : private Vehicle 
+struct HighwayPatrol : Vehicle 
 {
     HighwayPatrol();
     ~HighwayPatrol() override;

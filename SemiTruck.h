@@ -4,7 +4,7 @@
 
 struct Highway;
 
-struct SemiTruck : public Vehicle
+struct SemiTruck : Vehicle
 {
     SemiTruck (const std::string& n, const std::string& vt = "SemiTruck");
     ~SemiTruck() override;
